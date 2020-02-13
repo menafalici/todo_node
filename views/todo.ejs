@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Todo app</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
+
+
+
+</head>
+
+<body>
+    <div class="todo-container">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 mt-1">
+                <div class="card">
+                    <div class="header">
+                        <div id="date">
+                            <%= new Date().toLocaleDateString("en-US", {weekday: "long", month: "short",day: "numeric", year: "numeric" });%>
+                        </div>
+                    </div>
+
+                    <div class="card-header">
+                        <h2>MY TO DO LIST</h2>
+                    </div>
+
+                    <div class="todo">
+                        <form action="/" method="POST" class="todo-header">
+                            <input type="text" placeholder="Add a Todo.." name="content">
+                            <button type="submit"><span class="fas fa-plus"></span></button>
+                        </form>
+
+                        <ul class="todo-list">
+                            <% todoTasks.forEach(details => { %>
+                                <li class="todo-list-item">
+                                    <div class="todo-list-item-name">
+                                        <%= details.content %>
+                                    </div>
+                                    <a href="/edit/<%=details._id %>" class="edit">
+                                        <span class="fas fa-edit"></span>
+                                    </a>
+                                    <a href="/remove/<%=details._id %>" class="remove">
+                                        <span class="fas fa-times"></span>
+                                    </a>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
