@@ -33,7 +33,8 @@ body {
 
 .todo-container h2 {
     font-family: 'Candal', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 .todo-header input {
@@ -42,6 +43,7 @@ body {
     border: 1px solid grey;
     border-radius: 3px;
     font-family: 'Candal', sans-serif;
+    text-align: center;
 }
 
 .todo-header button {
@@ -121,4 +123,20 @@ body {
     margin-right: 5px;
     cursor: pointer;
     text-decoration: none;
+}
+
+.pagination {
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.page2,
+.page3,
+.page4 {
+    border: 1px solid #0101;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #0101;
 }

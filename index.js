@@ -21,6 +21,8 @@ app.get("/", (req, res) => {
     });
 });
 
+
+
 //POST METHOD
 app.post('/', async(req, res) => {
     const todoTask = new TodoTask({
@@ -47,9 +49,13 @@ app.route("/edit/:id")
         const id = req.params.id;
         TodoTask.findByIdAndUpdate(id, { content: req.body.content }, err => {
             if (err) return res.send(500, err);
-            res.redirect("/");
-        });
+            res.redirect("/")
+        })
+
     });
+
+
+
 
 //DELETE
 app.route("/remove/:id").get((req, res) => {
@@ -60,8 +66,6 @@ app.route("/remove/:id").get((req, res) => {
         res.redirect("/");
     });
 });
-
-
 
 //listen to port 
 const port = process.env.PORT || 8000;
