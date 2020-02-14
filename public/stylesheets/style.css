@@ -140,3 +140,12 @@ body {
     padding: 2px;
     background-color: #0101;
 }
+
+.az {
+    margin-left: 50px;
+    border: 1px solid #0101;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: #0101;
+}

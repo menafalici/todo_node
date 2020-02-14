@@ -4,10 +4,13 @@ const TodoTask = require("../models/TodoTask");
 const router = express.Router();
 
 // GET METHOD
-router.get("/", (req, res) => {
-    TodoTask.find({}, (err, tasks) => {
-        res.render("todo.ejs", { todoTasks: tasks });
-    });
+router.get("/", async(req, res) => {
+
+    const page = req.query.page;
+    const todoTasks = await TodoTask.find().skip((page - 1) * tasks).limit(3);
+    //const sorted = request.query.sort + 1;
+
+    res.render("todo.ejs", { todoTasks });
 });
 
 //POST METHOD
@@ -52,3 +55,12 @@ router.route("/remove/:id").get((req, res) => {
 });
 
 module.exports = router;
+
+const tasks = 3
+router.get("/AtoZ", async(request, response) => {
+    console.log(request.query);
+    const page = request.query.page;
+    const sorted = request.query.sort + 1;
+    const todoTasks = await TodoTask.find().sort({ content: sorted }).skip((page - 1) * tasks).limit(3);
+    response.render("todo", { todoTasks });
+});

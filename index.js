@@ -20,12 +20,12 @@ mongoose.set("useFindAndModify", false);
 
 
 //listen to port 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 const options = {
     useUnifiedTopology: true,
     useNewUrlParser: true
 }
 mongoose.connect(config.databaseURL, options).then(() => {
-    console.log("Server is started at port 8000")
+    console.log("Server is started at port 3000")
     app.listen(port);
 })
