@@ -17,8 +17,6 @@ app.use(todoRouter);
 
 mongoose.set("useFindAndModify", false);
 
-
-
 //listen to port 
 const port = process.env.PORT || 3000;
 const options = {
