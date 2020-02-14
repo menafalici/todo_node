@@ -130,9 +130,9 @@ body {
     margin-bottom: 5px;
 }
 
+.page1,
 .page2,
-.page3,
-.page4 {
+.page3 {
     border: 1px solid #0101;
     margin-right: 5px;
     cursor: pointer;

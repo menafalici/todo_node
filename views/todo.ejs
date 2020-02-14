@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Todo app</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
-
-
-
-</head>
-
-<body>
+<%-  include("header") -%>
     <div class="todo-container">
 
         <div class="row justify-content-center">
@@ -58,11 +36,11 @@
                                 <% }) %>
                         </ul>
                         <div class=" pagination">
+                            <div class="page1"> <a href="/?page=1">Page 1 <span><i class="fa fa-chevron-right"></i></span></a></div>
+
                             <div class="page2"> <a href="/?page=2">Page 2 <span><i class="fa fa-chevron-right"></i></span></a></div>
 
                             <div class="page3"> <a href="/?page=3">Page 3 <span><i class="fa fa-chevron-right"></i></span></a></div>
-
-                            <div class="page4"> <a href="/?page=4">Page 4 <span><i class="fa fa-chevron-right"></i></span></a></div>
 
                             <div class="az"> <a href="/AtoZ"><i class="fas fa-sort-alpha-up"></i> </a>
                             </div>
@@ -75,7 +53,4 @@
             </div>
         </div>
     </div>
-
-</body>
-
-</html>
+    <%-  include("footer") -%>
